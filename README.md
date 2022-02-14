@@ -69,11 +69,11 @@
     ```
     
 * SUBSTRING_INDEX(문자열 쪼개기)
-   * select x1, x2, SUBSTRING_INDEX(x2, '@', 1) from tablex //x2 속성값이 이메일일때 @기준으로 텍스트를 쪼개고, 그 중 첫 번째 조각을 가져옴
-   * select x1, x2, SUBSTRING_INDEX(x2, '@', -1) from tablex //x2 속성값이 이메일일때 @기준으로 텍스트를 쪼개고, 그 중 마지막 조각을 가져옴
+   * select x1, x2, SUBSTRING_INDEX(x2, '@', 1) from tablex //x2 속성값을 @기준으로 텍스트를 쪼개고, 그 중 첫 번째 조각을 가져옴
+   * select x1, x2, SUBSTRING_INDEX(x2, '@', -1) from tablex //x2 속성값을 @기준으로 텍스트를 쪼개고, 그 중 마지막 조각을 가져옴
    
 * SUBSTRING(문자열 일부만 출력하기)
-   * select x1, x3, substring(x3,1,10) as date from tablex //x3 속성값이 년-월-일일때 substring(문자열, 출력을 하고싶은 첫 글자의 위치(1), 몇개의 글자를 출력(10))
+   * select x1, x3, substring(x3,1,10) as date from tablex //substring(문자열, 출력을 하고싶은 첫 글자의 위치(1), 몇개의 글자를 출력(10))
 
 
 
