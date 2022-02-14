@@ -6,9 +6,9 @@
 
 **READ**
 * select 문(기본 검색을 위해 사용)
-   * ```select * from x //x에 있는 데이터 전부 출력
+   * select * from x //x에 있는 데이터 전부 출력
    * select x1, x2, x3 from x //x에 있는 특정속성(x1, x2, x3)만 데이터 출력
-   * 
+   
 * where 문(조건 검색을 위해 사용)
    * select * from tablex where x1 = '1234' //테이블 x에 있는 x1 속성값이 1234인 경우의 데이터 출력
    * select * from tablex where x1 = '1234' and x2 > '123' //테이블 x에 잇는 x1 속성값이 1234인 경우와 x2 속성값이 123보다 큰 경우의 데이터 출력
@@ -17,7 +17,7 @@
    * select * from tablex where x5 like '%abcd%' //테이블 x에 있는 x5 속성값 중 특정 키워드(abcd)를 포함한 데이터 출력
    * select count(distinct(x6)) from tablex //테이블 x에서 중복을 제거한 x6 속성값의 개수 추출
    * select count(x) from (select distinct * from tablex) x //전체 데이터에서 중복이 있을때 제거하고 개수 추출
-   * 
+   
 * group by(기존 속성으로 묶는 것)
    * select x1, count(*) from tablex group by x1 //테이블 x에서 x1속성으로 묶고, 개수 추출
    * select x2, max(x3) from tablex group by x2 //테이블 x에서 x2속성으로 묶고, x3의 최대값 추출
@@ -75,6 +75,18 @@
 * SUBSTRING(문자열 일부만 출력하기)
    * select x1, x3, substring(x3,1,10) as date from tablex //substring(문자열, 출력을 하고싶은 첫 글자의 위치(1), 몇개의 글자를 출력(10))
 
+* CASE(경우에 따라 원하는 값을 새 필드에 출력)
+  ```
+  select X1, count(*) as cnt from (
+	  select x.x2, x.x3,
+	  case 
+	  when x.x3 > 10000 then '1만 이상'
+	  when x.x3 > 5000 then '5천 이상'
+	  else '5천 미만'
+	  END as lv
+	  from tablex x
+  ) a group by lv
+```
 
 
 
