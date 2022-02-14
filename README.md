@@ -5,5 +5,5 @@
 **DELETE**
 
 **READ**
-* select: 데이터 불러오기
-  *   
+* select : 데이터 불러오기
+   * dafda   
