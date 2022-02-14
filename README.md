@@ -33,9 +33,7 @@
 
 * join(여러 개의 테이블을 조건에 맞게 테이블을 연결한 것)
    * inner join(테이블 x, y가 있다고 가정할 때, 이 둘의 교집합만을 join)
-    *select * from orders o 
-inner join users u
-on o.user_id = u.user_id  
+    * select * from tablex as x inner join tabley as y on x.x1 = y.x1  
    * left join(테이블 x, y가 있다고 가정할 때, 왼쪽 테이블 x를 중심으로 join)
    * 
 
