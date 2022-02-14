@@ -6,7 +6,7 @@
 
 **READ**
 * select 문(기본 검색을 위해 사용)
-   * select * from x //x에 있는 데이터 전부 출력
+   * ```select * from x //x에 있는 데이터 전부 출력
    * select x1, x2, x3 from x //x에 있는 특정속성(x1, x2, x3)만 데이터 출력
    * 
 * where 문(조건 검색을 위해 사용)
