@@ -1,8 +1,4 @@
-** CREATE
-
-** READ
-
-
-** UPDATE
-** DELETE
-*
+**CREATE**
+**UPDATE**
+**DELETE**
+**READ**
