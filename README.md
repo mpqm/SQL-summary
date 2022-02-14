@@ -1,1 +1,7 @@
-# SQL-summary
+**CREATE
+**READ
+
+
+**UPDATE
+**DELETE
+*
