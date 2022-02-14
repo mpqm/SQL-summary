@@ -40,9 +40,8 @@
    * (~query~)union all(~query~)
 
 * subquery(큰 쿼리문 안에 들어가 있는 쿼리문)
-    
-    select x1, x2, x3 from tablex x where x1 in ( select x1 from tabley y where y1 = 'abcd') //테이블 y에서 속성값 y1이 abcd일 때의 테이블 x에서의 속성값 x1, x2, x3을 보임
-    select x.x1, x.x2, x.x3, (select avg(x4) from tablex where x1 = x.x1) as avg_x1 from tablex x //테이블 x에서의 각 x1별 x4값의 평균을 x테이블에 보임
+   * select x1, x2, x3 from tablex x where x1 in ( select x1 from tabley y where y1 = 'abcd') //테이블 y에서 속성값 y1이 abcd일 때의 테이블 x에서의 속성값 x1, x2, x3을 보임
+   * select x.x1, x.x2, x.x3, (select avg(x4) from tablex where x1 = x.x1) as avg_x1 from tablex x //테이블 x에서의 각 x1별 x4값의 평균을 x테이블에 보임
     ```
     select x.x1, x.x2, y.y1 from 
      (
@@ -72,7 +71,7 @@
 * SUBSTRING_INDEX(문자열 쪼개기)
    * select x1, x2, SUBSTRING_INDEX(x2, '@', 1) from tablex //x2 속성값이 이메일일때 @기준으로 텍스트를 쪼개고, 그 중 첫 번째 조각을 가져옴
    * select x1, x2, SUBSTRING_INDEX(x2, '@', -1) from tablex //x2 속성값이 이메일일때 @기준으로 텍스트를 쪼개고, 그 중 마지막 조각을 가져옴
-   * 
+   
 * SUBSTRING(문자열 일부만 출력하기)
    * select x1, x3, substring(x3,1,10) as date from tablex //x3 속성값이 년-월-일일때 substring(문자열, 출력을 하고싶은 첫 글자의 위치(1), 몇개의 글자를 출력(10))
 
