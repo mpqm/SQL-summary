@@ -43,27 +43,27 @@
    * select x1, x2, x3 from tablex x where x1 in ( select x1 from tabley y where y1 = 'abcd') //테이블 y에서 속성값 y1이 abcd일 때의 테이블 x에서의 속성값 x1, x2, x3을 보임
    * select x.x1, x.x2, x.x3, (select avg(x4) from tablex where x1 = x.x1) as avg_x1 from tablex x //테이블 x에서의 각 x1별 x4값의 평균을 x테이블에 보임
    * select x.x1, x.x2, y.y1 from 
-     (
-        select x1, count(distinct(x2)) as x2_cnt from tablex group by o1 //o1별 x2의 개수 구하기
-     ) a 
-     inner join (
-      select y1, count(*) as tot_cnt from tabley group by o1 //o1별 총 개수 구하기
-     ) b on a.o1 = b.o1 
-     inner join tablez z on a.o1 = z.o1 //다른테이블의 속성값을 서브쿼리로 가져온다음 붙여서 새로운 테이블 작성 
+   *  (
+   *     select x1, count(distinct(x2)) as x2_cnt from tablex group by o1 //o1별 x2의 개수 구하기
+   *  ) a 
+   *  inner join (
+   *   select y1, count(*) as tot_cnt from tabley group by o1 //o1별 총 개수 구하기
+   *  ) b on a.o1 = b.o1 
+   *  inner join tablez z on a.o1 = z.o1 //다른테이블의 속성값을 서브쿼리로 가져온다음 붙여서 새로운 테이블 작성 
 
 * with(깔끔한 쿼리문 정리)
    * with table1 as
-     (
-        select x1, count(distinct(x2)) as x2_cnt from tablex group by o1 //o1별 x2의 개수 구하기
-     ), table2 as (
-        select y1, count(*) as tot_cnt from tabley group by o1 //o1별 총 개수 구하기
-     ) 
-     select c.z1,
-            a.x1,
-            b.y1
-     from table1 a
-     inner join table2 b on a.o1 = b.o1
-     inner join table3 c on a.o1 = c.o1
+   *  (
+   *     select x1, count(distinct(x2)) as x2_cnt from tablex group by o1 //o1별 x2의 개수 구하기
+   *  ), table2 as (
+   *     select y1, count(*) as tot_cnt from tabley group by o1 //o1별 총 개수 구하기
+   *  ) 
+   *  select c.z1,
+   *         a.x1,
+   *         b.y1
+   *  from table1 a
+   *  inner join table2 b on a.o1 = b.o1
+   *  inner join table3 c on a.o1 = c.o1
     
 * 
 
